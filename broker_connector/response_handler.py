@@ -1,3 +1,6 @@
+from .ticker_to_figi import df
+
+
 def create_dict(c):
     try:
         name = list(df.loc[(df['figi'] == c.figi)]['name'])[0]

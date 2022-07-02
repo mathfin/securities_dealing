@@ -2,7 +2,7 @@ import pandas as pd
 
 from tinkoff.invest import Client
 from tinkoff.invest.services import InstrumentsService
-from token_file import TOKEN
+from .token_file import TOKEN
 
 
 rts = input("Companies ticker to show:").split(",")

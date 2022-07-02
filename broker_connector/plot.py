@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from stockhistory import StockHistory
+from .stockhistory import StockHistory
 
 
 class Plots:
