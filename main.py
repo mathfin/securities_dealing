@@ -30,7 +30,6 @@ async def main():
 
         async for marketdata in client.market_data_stream.market_data_stream(request_iterator()):
             market_info = create_dict(marketdata.last_price)
-            print(market_info)
 
             if market_info is not None:
                 name, time, price = market_info

@@ -1,4 +1,5 @@
 import numpy as np
+from datetime import datetime, timedelta
 
 
 class StockHistory:
@@ -17,3 +18,8 @@ class StockHistory:
 
     def price_update(self, *timestamp_price):
         self.time_value_pair = np.concatenate((self.time_value_pair, timestamp_price), 0)
+        i = 0
+        while (datetime.strptime(self.time_value_pair[-1, 0].split('.')[0], '%Y-%m-%d %H:%M:%S')
+               - datetime.strptime(self.time_value_pair[i, 0].split('.')[0], '%Y-%m-%d %H:%M:%S')) >= timedelta(seconds=10):
+            i += 1
+        self.time_value_pair = self.time_value_pair[i:, :]
