@@ -6,7 +6,8 @@ def create_dict(c):
         name = list(df.loc[(df['figi'] == c.figi)]['name'])[0]
         time = str(c.time)
         price = float(cast_money(c.price))
-        return name, time, price
+        quantity = int(c.quantity)
+        return name, time, price, quantity
 
     except AttributeError:
         return None

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PankBank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<div class="flex" >
+  <div>
+    ПАН <br>БАН
+  </div>
+  <div>
+    К
+  </div>
+</div>
+<hr/>
+
+
+<h1>Select securities</h1>
+<div id="wrapper">
+	<form id="signin" method="POST" action="" autocomplete="off">
+		<input type="text" id="securities" name="securities" placeholder="Tickers: GAZP,SBER" />
+        <input type="text" id="seconds" name="seconds" placeholder="Seconds to show: 15" />
+		<button type="submit">&#xf0da;</button>
+	</form>
+</div>
+
+
+</body>
+</html>

@@ -2,7 +2,7 @@ import numpy as np
 from datetime import datetime, timedelta
 
 
-sec_to_show = int(input("Seconds to display on the graph: "))
+sec_to_show = 15 # int(input("Seconds to display on the graph: "))
 
 
 class StockHistory:

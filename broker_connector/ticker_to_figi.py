@@ -5,7 +5,7 @@ from tinkoff.invest.services import InstrumentsService
 from .token_file import TOKEN
 
 
-sec_name = input("Tickers to show:").split(",")
+sec_name = ['TSLA'] # input("Tickers to show:").split(",")
 
 
 with Client(TOKEN) as cl:
