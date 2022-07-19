@@ -1,9 +1,12 @@
 # Securities dealing
 
-The program displays stock quotes in real time. To run this program you need to download
-file and install all used libraries.
-After that, you will need to run main.py, it will ask you limit of displaying seconds
-and ticker of the companies you want to see. You will see the dynamic graph 
-with tick-by-tick price, like on the screen below. <img src="describe.jpg">
-In the future I will add it on the site with visual design and add 
-machine learning algorithms to analyse price movement
+The program displays security quotes in real time. To run this program you need to download
+file and install all used libraries, also you need to add token_file in your program
+it is file that contain token from tinkoff-invest-api.
+After that, you will need to run main.py, and go to the site where you can choose tickers of 
+companies and seconds for graph displaying. <img src="static/img/main_page.jpg"> 
+If you enter the data correctly and click on the button, you will see the dynamic graph 
+with the latest transactions and their quantity, like on the screen below.
+<img src="static/img/graph_page.jpg">
+In the future I will add DB for saving info, better visual design and add 
+machine learning algorithms to analyse price movement.

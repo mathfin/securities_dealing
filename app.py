@@ -47,7 +47,6 @@ async def main():
             market_info = create_dict(marketdata.trade)
             if market_info is not None:
                 name, time, price, quantity = market_info
-                print(name, time, price, quantity)
                 if StockHistory.get_by_name(name) is not None:
                     StockHistory.get_by_name(name).price_update([time, price, quantity])
                 else:
@@ -64,6 +63,6 @@ def async_main_wrapper():
 if __name__ == "__main__":
     th = Thread(target=async_main_wrapper)
     th.start()
-    app.run(debug=True)
+    app.run(debug=False)
     th.join()
 

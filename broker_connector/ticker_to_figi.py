@@ -23,4 +23,3 @@ with Client(TOKEN) as cl:
 
 
 df = pd.DataFrame(ticker_to_figi_list)
-print(df)
