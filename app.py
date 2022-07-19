@@ -22,8 +22,8 @@ create_dash_application(app)
 @app.route('/', methods=["POST", "GET"])
 def build_plot():
     if request.method == "POST":
-        session['securities'] = request.form['securities']
-        session['seconds'] = request.form['seconds']
+        StockHistory.security_to_show = request.form['securities'].split(',')
+        StockHistory.sec_to_show = int(request.form['seconds'])
         return redirect(url_for('/dash/'))
     return render_template('index.html')
 
@@ -39,7 +39,7 @@ async def main():
             )
         )
         while True:
-            await asyncio.sleep(1)
+            await asyncio.sleep(0.1)
 
     async with AsyncClient(TOKEN) as client:
 

@@ -2,11 +2,10 @@ import numpy as np
 from datetime import datetime, timedelta
 
 
-sec_to_show = 15 # int(input("Seconds to display on the graph: "))
-
-
 class StockHistory:
     all_stocks = dict()
+    sec_to_show = 50  # int(input("Seconds to display on the graph: "))
+    security_to_show = ['GAZP']
 
     def __init__(self, name, *time_value_pair):
         self.name = name
@@ -23,6 +22,7 @@ class StockHistory:
         self.time_value_pair = np.concatenate((self.time_value_pair, timestamp_price), 0)
         i = 0
         while (datetime.strptime(self.time_value_pair[-1, 0].split('.')[0], '%Y-%m-%d %H:%M:%S')
-               - datetime.strptime(self.time_value_pair[i, 0].split('.')[0], '%Y-%m-%d %H:%M:%S')) >= timedelta(seconds=sec_to_show):
+               - datetime.strptime(self.time_value_pair[i, 0].split('.')[0], '%Y-%m-%d %H:%M:%S')) \
+                >= timedelta(seconds=StockHistory.sec_to_show):
             i += 1
         self.time_value_pair = self.time_value_pair[i:, :]
